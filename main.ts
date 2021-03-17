@@ -1,5 +1,5 @@
 pins.servoSetPulse(AnalogPin.P0, 3000)
-let angle = 3
+let angle = 8
 let direction = 1
 basic.showLeds(`
     . . # . .
@@ -21,7 +21,7 @@ basic.forever(function () {
             . . # . .
             `)
     }
-    if (angle <= 3) {
+    if (angle <= 8) {
         direction = 1
         angle += direction
         basic.showLeds(`
@@ -33,5 +33,4 @@ basic.forever(function () {
             `)
     }
     angle += direction
-    basic.pause(100)
 })
