@@ -1,6 +1,8 @@
 pins.servoSetPulse(AnalogPin.P0, 3000)
-let angle = 8
-let direction = 1
+let speed = 5
+let min_angle = 8
+let angle = min_angle
+let direction = speed
 basic.showLeds(`
     . . # . .
     . # . . .
@@ -11,7 +13,7 @@ basic.showLeds(`
 basic.forever(function () {
     pins.servoWritePin(AnalogPin.P0, angle)
     if (angle >= 180) {
-        direction = -1
+        direction = speed * -1
         angle += direction
         basic.showLeds(`
             . . # . .
@@ -22,7 +24,7 @@ basic.forever(function () {
             `)
     }
     if (angle <= 8) {
-        direction = 1
+        direction = speed
         angle += direction
         basic.showLeds(`
             . . # . .
