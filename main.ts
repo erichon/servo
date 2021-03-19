@@ -4,36 +4,17 @@ let min_angle = 45
 let max_angle = 135
 let angle = min_angle
 let direction = speed
-basic.showLeds(`
-    . . # . .
-    . # . . .
-    # # # # #
-    . # . . .
-    . . # . .
-    `)
 basic.forever(function () {
-    pins.servoWritePin(AnalogPin.P0, angle)
-    if (angle >= max_angle) {
-        direction = speed * -1
-        angle += direction
-        basic.showLeds(`
-            . . # . .
-            . . . # .
-            # # # # #
-            . . . # .
-            . . # . .
-            `)
-    }
-    if (angle <= min_angle) {
-        direction = speed
-        angle += direction
-        basic.showLeds(`
-            . . # . .
-            . # . . .
-            # # # # #
-            . # . . .
-            . . # . .
-            `)
-    }
-    angle += direction
+    pins.analogSetPeriod(AnalogPin.P0, 20000)
+    pins.servoSetPulse(AnalogPin.P0, 1300)
+    basic.pause(2000)
+    pins.analogSetPeriod(AnalogPin.P0, 20000)
+    pins.servoSetPulse(AnalogPin.P0, 1500)
+    basic.pause(2000)
+    pins.analogSetPeriod(AnalogPin.P0, 20000)
+    pins.servoSetPulse(AnalogPin.P0, 1700)
+    basic.pause(2000)
+    pins.analogSetPeriod(AnalogPin.P0, 20000)
+    pins.servoSetPulse(AnalogPin.P0, 1500)
+    basic.pause(2000)
 })
