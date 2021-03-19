@@ -1,4 +1,4 @@
-pins.servoSetPulse(AnalogPin.P0, 3000)
+pins.servoSetPulse(AnalogPin.P0, 20000)
 let speed = 1
 let min_angle = 45
 let max_angle = 135
