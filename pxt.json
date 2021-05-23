@@ -1,5 +1,5 @@
 {
-    "name": "continuous_servo",
+    "name": "continuous_servo-360",
     "description": "",
     "dependencies": {
         "core": "*",
